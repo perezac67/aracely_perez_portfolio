@@ -1,0 +1,484 @@
+/* Define your color palette as custom properties for easy changes */
+:root {
+    --midnight: #0b1957;
+    --sapphire: #426bca;
+    --petal: #e8d9ed;
+    --lace: #f7f4ed;
+    --lavender: #d2b3db;
+    --bridal-blue: #e9f3ff;
+}
+
+/* Reset default browser styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--lace);
+    color: var(--midnight);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--midnight), var(--sapphire));
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--lavender);
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.email {
+    font-size: 1.1rem;
+    color: var(--bridal-blue);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.nav-button {
+    background-color: var(--sapphire);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--midnight);
+}
+
+/* Main Content (Full Width) */
+main {
+    width: 100%;
+    padding: 1rem 0;
+}
+
+/* Section backgrounds */
+#pixel-art {
+    background-color: var(--bridal-blue);
+}
+#textures {
+    background-color: var(--petal);
+}
+#2d-art,
+#ui-characters,
+#illustrations {
+    background-color: var(--lace);
+}
+
+/* Art Section Container */
+.art-section {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Section header */
+.art-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--midnight);
+    border-bottom: 2px solid var(--sapphire);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* ---------- Pixel Art: Cave & Hare Side by Side ---------- */
+.pixel-art-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .pixel-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Cave Section */
+  .cave-section {
+    text-align: center;
+  }
+  .cave-img {
+    width: 100%;
+    max-width: 500px; /* Adjust size */
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cave-text {
+    background-color: #ffebee;
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--sapphire);
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  /* Hare Section */
+  .hare-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hare-text {
+    background-color: #ffebee;
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: var(--sapphire);
+    max-width: 200px;
+    text-align: left;
+  }
+  .hare-img {
+    width: 100%;
+    max-width: 400px; /* Adjust size */
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+
+/* Center the Pixel Art .section-intro text */
+.section-intro {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+/* Funko bigger + new Funko_Uvs */
+.bigger-funko .image-row img {
+  width: 300px; /* bigger Funko images */
+  max-width: 100%;
+}
+
+/* Textures: Alternate layout for multi-feature blocks */
+#textures .multi-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+#textures .multi-feature:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* 2D Art: Two-Column Layout */
+.two-column {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.two-column .column {
+  flex: 1;
+}
+
+/* Additional spacing for 2D Art multi-feature blocks */
+.bigger-feature {
+  margin-bottom: 2.5rem;
+}
+.bigger-feature .image-row img {
+  width: 350px; 
+  max-width: 100%;
+}
+
+/* ---------- Stalking Section: Image & Video Side by Side ---------- */
+.center-stalking {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .stalking-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .stalking-img {
+    width: 250px; /* Adjusted for better fit */
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stalking-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .stalking-video {
+    width: 450px; /* Larger size for better viewing */
+    max-width: 100%;
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stalking-video:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+
+/* Featured Art for other items */
+.featured-art {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.featured-art img {
+    width: 300px;
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.featured-art img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Increase descriptive text size and color for p elements */
+.featured-art p,
+.multi-feature p,
+.section-intro,
+.cave-text,
+.hare-text {
+    font-size: 1.4rem;
+    color: var(--sapphire);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* Row container for multiple images (Cat, Dog, etc.) */
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.image-row img {
+    width: 300px;
+    max-width: 350px;
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.image-row img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Raccoon Raid video block */
+.video-feature {
+  justify-content: center;
+}
+.video-feature video {
+  width: 640px;
+  max-width: 90%;
+  border: 2px solid var(--lavender);
+  border-radius: 5px;
+  background-color: var(--lace);
+  outline: none;
+}
+
+/* Pixel Art Gallery (remaining images) */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--lavender);
+    border-radius: 5px;
+    background-color: var(--lace);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: var(--midnight);
+    color: #fff;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ------------------ Modal Styles ------------------ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 1rem 0;
+}
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@keyframes zoom {
+  from { transform: scale(0.1); }
+  to { transform: scale(1); }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+}
+@media only screen and (max-width: 700px) {
+  .modal-content {
+      width: 100%;
+  }
+}
+
+/* ---------- Stalking Block Centered ---------- */
+.center-stalking {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 700px; /* optional: limit width to center more */
+}
+.center-stalking .stalking-media {
+  justify-content: center;
+  align-items: center;
+}
+.stalking-img {
+  width: 200px; 
+  border: 2px solid var(--lavender);
+  border-radius: 5px;
+  background-color: var(--lace);
+  outline: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stalking-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.stalking-video {
+  width: 400px;
+  max-width: 100%;
+  border: 2px solid var(--lavender);
+  border-radius: 5px;
+  background-color: var(--lace);
+  outline: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stalking-video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ---------- Additional Box Styling for Descriptive Texts ---------- */
+/* Pixel Art descriptive texts: light pink with increased vertical size */
+#pixel-art p {
+  background-color: #ffebee;
+  padding: 1.5rem;
+  border-radius: 5px;
+  min-height: 120px;
+}
+
+/* Textures descriptive texts: light yellow with extra horizontal padding */
+#textures p {
+  background-color: #fff9c4;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+/* 2D Art descriptive texts: light blue with fixed width and centered */
+#2d-art p,
+#ui-characters p,
+#illustrations p {
+  background-color: #e3f2fd;
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+}
