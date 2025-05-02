@@ -219,4 +219,55 @@ header h1 {
   transform: scale(1.05);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--midnight);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 28px;
+  color: var(--sapphire);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: var(--lavender);
+}
 
