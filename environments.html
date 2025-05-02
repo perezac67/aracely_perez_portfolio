@@ -46,7 +46,7 @@
   <!-- Modal for City -->
   <div id="cityModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close city-close">&times;</span>
       <img src="Assets/City_Pixel.png" alt="City Full View" />
       <div class="modal-text">
         <p>
@@ -76,19 +76,19 @@
 </div>
 
 
- <script>
+<script>
   // City Modal
   const cityModal = document.getElementById("cityModal");
   const cityThumb = document.getElementById("city-thumb");
-  const cityClose = document.querySelector(".modal .close");
+  const cityClose = document.querySelector(".city-close");
 
   cityThumb.onclick = () => {
     cityModal.style.display = "block";
-  }
+  };
 
   cityClose.onclick = () => {
     cityModal.style.display = "none";
-  }
+  };
 
   // Sunset Modal
   const sunsetModal = document.getElementById("sunsetModal");
@@ -97,15 +97,15 @@
 
   sunsetThumb.onclick = () => {
     sunsetModal.style.display = "block";
-  }
+  };
 
   sunsetClose.onclick = () => {
     sunsetModal.style.display = "none";
-  }
+  };
 
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
     if (e.target === sunsetModal) sunsetModal.style.display = "none";
-  }
+  };
 </script>
