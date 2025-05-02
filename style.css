@@ -136,3 +136,40 @@ $lace: #f7f4ed;
     }
   }
 }
+
+.main-buttons {
+  background-color: $lace;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+
+  .button-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+    max-width: 700px;
+    width: 100%;
+    justify-items: center;
+
+    .main-button {
+      background-color: $sapphire;
+      color: white;
+      padding: 1.2rem 2.5rem;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background-color 0.2s;
+      min-width: 200px;
+
+      &:hover {
+        background-color: $midnight;
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
