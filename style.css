@@ -46,14 +46,19 @@ header h1 {
 }
 
 .icon {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.2s ease;
+  width: 32px;
+  height: 32px;
+  max-width: 100%;
+  max-height: 32px;
+  object-fit: contain;
+  image-rendering: pixelated; /* for crisp pixel-style icons */
+  transition: transform 0.2s ease;
 }
 
 .icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
+
 
 .subtitle {
     font-size: 1.5rem;
