@@ -35,6 +35,7 @@
       <img src="Assets/Char_Select.png" alt="Character Select UI" />
       <img src="Assets/Chosen_One_2.png" alt="The Chosen One" />
       <img src="Assets/Stalking.png" alt="Stalking Animation Still" />
+      <img src="Assets/GMU_DRIFT.png" alt="GMU Drift Thumbnail" class="clickable" id="gmu-thumb" />
     </div>
   </main>
 
@@ -54,8 +55,27 @@
     </div>
   </div>
 
-  <!-- Modal Script -->
+  <!-- Modal for GMU Drift -->
+  <div id="gmuModal" class="modal">
+    <div class="modal-content">
+      <span class="close gmu-close">&times;</span>
+      <div class="modal-gallery">
+        <img src="Assets/Start_Menu_3_Sketch.png" alt="Menu Sketch" />
+        <img src="Assets/Chosen_One_1.png" alt="Chosen One Concept 1" />
+        <img src="Assets/Chosen_One_2.png" alt="Chosen One Concept 2" />
+        <img src="Assets/GMU_DRIFT.png" alt="Final GMU Drift Scene" />
+      </div>
+      <div class="modal-text">
+        <p>This is a main menu scene I created for a game project. I began the process by sketching three different layout concepts and presenting them to the design team. After some discussion, they chose one that best captured the tone we were aiming for. With that direction locked in, I moved forward by refining the sketch, adding color, lighting, and detailed elements to bring the scene to life.</p>
+        <p>However, the design evolved during development. I received feedback requesting the removal of the character positioned at the bottom of the screen to create a more open and immersive feel. The team also wanted the background to feel more alive, so I added new elements and visual depth to better reflect the world of the game. Additionally, since this scene was originally designed early in the project, I had to go back and update the go-karts to match the final in-game designs for consistency.</p>
+        <p>What you see here is the finalized version of the main menu, complete with the user interface layered in. It was a collaborative process that helped me grow not only in visual design but also in adapting to creative feedback and iterative changes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Scripts -->
   <script>
+    // Loki Modal
     const lokiModal = document.getElementById("lokiModal");
     const lokiThumb = document.getElementById("loki-thumb");
     const lokiClose = document.querySelector(".loki-close");
@@ -68,8 +88,23 @@
       lokiModal.style.display = "none";
     };
 
+    // GMU Drift Modal
+    const gmuModal = document.getElementById("gmuModal");
+    const gmuThumb = document.getElementById("gmu-thumb");
+    const gmuClose = document.querySelector(".gmu-close");
+
+    gmuThumb.onclick = () => {
+      gmuModal.style.display = "block";
+    };
+
+    gmuClose.onclick = () => {
+      gmuModal.style.display = "none";
+    };
+
+    // Global click outside to close modals
     window.onclick = (e) => {
       if (e.target === lokiModal) lokiModal.style.display = "none";
+      if (e.target === gmuModal) gmuModal.style.display = "none";
     };
   </script>
 </body>
