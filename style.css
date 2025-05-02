@@ -271,3 +271,61 @@ header h1 {
   color: var(--lavender);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-gallery img {
+  margin: 1rem 0;
+}
+
+.modal-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--midnight);
+  text-align: left;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 28px;
+  color: var(--sapphire);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: var(--lavender);
+}
