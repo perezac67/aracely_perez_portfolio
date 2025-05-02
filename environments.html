@@ -35,7 +35,7 @@
       <img src="Assets/City_Pixel.png" alt="City Environment" class="clickable" id="city-thumb" />
       <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" />
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" />
-      <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" />
+      <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
       <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" />
       <img src="Assets/water_Patch .png" alt="Water Patch" />
       <img src="Assets/House_1.png" alt="House 1" />
@@ -59,25 +59,53 @@
     </div>
   </div>
 
-  <!-- Script -->
-  <script>
-    const modal = document.getElementById("cityModal");
-    const thumb = document.getElementById("city-thumb");
-    const closeBtn = document.querySelector(".modal .close");
+  <!-- Modal for Sunset -->
+<div id="sunsetModal" class="modal">
+  <div class="modal-content">
+    <span class="close sunset-close">&times;</span>
+    <img src="Assets/Sunset_Pixel.png" alt="Sunset Full View" />
+    <div class="modal-text">
+      <p>
+        This was another personal project where I wanted to experiment with capturing a sunset scene. I focused on playing with warm, vibrant colors—mainly oranges, purples, and yellows—to create a glowing transition between day and night. The visual of light across the sky and its reflection on the water was especially important to me.
+      </p>
+      <p>
+        One of the biggest challenges was rendering the water. Unlike buildings or static structures, water is constantly moving, and I was used to drawing clean, solid lines. This forced me to break out of my comfort zone and think more loosely, using softer strokes and gradients to suggest ripples. In the end, it helped me see light and form in a new way. This piece was not only fun to create but also taught me a lot about mood, movement, and how to evoke a natural sense of depth using flow.
+      </p>
+    </div>
+  </div>
+</div>
 
-    thumb.onclick = () => {
-      modal.style.display = "block";
-    }
 
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-    }
+ <script>
+  // City Modal
+  const cityModal = document.getElementById("cityModal");
+  const cityThumb = document.getElementById("city-thumb");
+  const cityClose = document.querySelector(".modal .close");
 
-    window.onclick = (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    }
-  </script>
-</body>
-</html>
+  cityThumb.onclick = () => {
+    cityModal.style.display = "block";
+  }
+
+  cityClose.onclick = () => {
+    cityModal.style.display = "none";
+  }
+
+  // Sunset Modal
+  const sunsetModal = document.getElementById("sunsetModal");
+  const sunsetThumb = document.getElementById("sunset-thumb");
+  const sunsetClose = document.querySelector(".sunset-close");
+
+  sunsetThumb.onclick = () => {
+    sunsetModal.style.display = "block";
+  }
+
+  sunsetClose.onclick = () => {
+    sunsetModal.style.display = "none";
+  }
+
+  // Close either modal by clicking outside
+  window.onclick = (e) => {
+    if (e.target === cityModal) cityModal.style.display = "none";
+    if (e.target === sunsetModal) sunsetModal.style.display = "none";
+  }
+</script>
