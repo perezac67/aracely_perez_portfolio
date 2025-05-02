@@ -329,3 +329,12 @@ header h1 {
 .close:hover {
   color: var(--lavender);
 }
+
+/* Existing button styles above... */
+
+.home-button-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
