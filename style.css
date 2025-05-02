@@ -108,11 +108,13 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
-  gap: 2rem;
+  row-gap: 3rem;         /* Increase vertical space between rows */
+  column-gap: 2rem;      /* Add horizontal space between columns */
   max-width: 700px;
   width: 100%;
   justify-items: center;
 }
+
 
 .main-button {
   background-color: var(--sapphire);
