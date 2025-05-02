@@ -134,3 +134,13 @@ header h1 {
   background-color: var(--midnight);
   transform: scale(1.05);
 }
+
+.home-button-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.home-button-container .main-button {
+  min-width: 220px;
+}
+
