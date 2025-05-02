@@ -26,13 +26,13 @@
         This page features a collection of pixel art environments and background assets.
       </p>
       <p>
-       From natural landscapes and architectural elements to decorative props, these pieces explore different moods, settings, and styles that could be used across various game worlds.
+        From natural landscapes and architectural elements to decorative props, these pieces explore different moods, settings, and styles that could be used across various game worlds.
       </p>
     </div>
 
     <div class="food-gallery">
       <img src="Assets/Cave_pixel.png" alt="Cave Environment" />
-      <img src="Assets/City_Pixel.png" alt="City Environment" />
+      <img src="Assets/City_Pixel.png" alt="City Environment" class="clickable" id="city-thumb" />
       <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" />
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" />
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" />
@@ -42,5 +42,42 @@
       <img src="Assets/House_2.png" alt="House 2" />
     </div>
   </main>
+
+  <!-- Modal for City -->
+  <div id="cityModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="Assets/City_Pixel.png" alt="City Full View" />
+      <div class="modal-text">
+        <p>
+          This was a side project of mine—I had never done any building before this, but after completing it, I can confidently say that I really enjoy the process. The piece includes a cluster of futuristic buildings, each designed with small details like window patterns, signs, and rooftop structures to give them a sense of life and purpose. I paid special attention to the lighting, using a mix of neon signs and glowing accents to create a vibrant nighttime scene.
+        </p>
+        <p>
+          I wanted to stick with a cyberpunk aesthetic, so I leaned heavily into a color palette of purples, dark blues, violets, and magentas. These tones helped capture that signature “cool at night” atmosphere, giving the scene an edgy, futuristic vibe. Overall, it was a great learning experience, and I'm excited to keep exploring this style in future builds.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const modal = document.getElementById("cityModal");
+    const thumb = document.getElementById("city-thumb");
+    const closeBtn = document.querySelector(".modal .close");
+
+    thumb.onclick = () => {
+      modal.style.display = "block";
+    }
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    }
+
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
