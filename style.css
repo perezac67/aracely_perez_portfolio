@@ -179,9 +179,23 @@ header h1 {
 }
 
 .food-intro {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  background-color: var(--petal);
+  padding: 1.5rem 2rem;
+  border-left: 6px solid var(--lavender);
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+.food-intro em {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--sapphire);
+}
+
 
 .food-gallery {
   display: grid;
