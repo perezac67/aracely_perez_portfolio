@@ -30,12 +30,47 @@
 
     <div class="food-gallery">
       <img src="Assets/Hare_Pixel.png" alt="Hare Pixel Character" />
-      <img src="Assets/Loki_Painting.png" alt="Loki Painting" />
+      <img src="Assets/Loki_Painting.png" alt="Loki Painting" class="clickable" id="loki-thumb" />
       <img src="Assets/Raccoon.png" alt="Raccoon Character" />
       <img src="Assets/Char_Select.png" alt="Character Select UI" />
       <img src="Assets/Chosen_One_2.png" alt="The Chosen One" />
       <img src="Assets/Stalking.png" alt="Stalking Animation Still" />
     </div>
   </main>
+
+  <!-- Modal for Loki -->
+  <div id="lokiModal" class="modal">
+    <div class="modal-content">
+      <span class="close loki-close">&times;</span>
+      <img src="Assets/Loki_Painting.png" alt="Loki Painting Full View" />
+      <div class="modal-text">
+        <p>
+          This piece is a 2D painting of a real 3D Loki Funko Pop figure. One of the main challenges was translating the depth of a physical object into a flat medium. I focused heavily on working with grayscale values—using whites to highlight raised surfaces and blacks to push back shadows, creating the illusion of depth.
+        </p>
+        <p>
+          Since I was turning a 3D character into a 2D artwork, it was important to capture every detail accurately—from the shape of the helmet to the subtle curves and textures of the figure. My goal was to make it feel like you could almost reach out and pick it off the screen.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Script -->
+  <script>
+    const lokiModal = document.getElementById("lokiModal");
+    const lokiThumb = document.getElementById("loki-thumb");
+    const lokiClose = document.querySelector(".loki-close");
+
+    lokiThumb.onclick = () => {
+      lokiModal.style.display = "block";
+    };
+
+    lokiClose.onclick = () => {
+      lokiModal.style.display = "none";
+    };
+
+    window.onclick = (e) => {
+      if (e.target === lokiModal) lokiModal.style.display = "none";
+    };
+  </script>
 </body>
 </html>
