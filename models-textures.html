@@ -32,7 +32,7 @@
       <img src="Assets/Alien_Model.png" alt="Alien Model" class="clickable" id="alien-thumb" />
      <img src="Assets/Cat_Front.png" alt="Cat Model" class="clickable" id="cat-thumb" />
       <img src="Assets/Dog_Front.png" alt="Dog Model" class="clickable" id="dog-thumb" />
-      <img src="Assets/Funko_Front.png" alt="Funko Model" />
+      <img src="Assets/Funko_Front.png" alt="Funko Model" class="clickable" id="funko-thumb" />
     </div>
   </main>
 
@@ -87,6 +87,25 @@
     </div>
   </div>
 
+
+
+   <!-- Funko Modal -->
+  <div id="funkoModal" class="modal">
+    <div class="modal-content">
+      <span class="close funko-close">&times;</span>
+      <img src="Assets/Funko_Front.png" alt="Funko Front View" />
+      <img src="Assets/Funko_Back.png" alt="Funko Back View" />
+      <img src="Assets/Funko_Uvs.png" alt="Funko UVs" />
+      <div class="modal-text">
+        <p>
+          This is a Funko Pop-style character that I textured (model not created by me). The design features a bold mix of distinctive colors, ranging from vibrant pinks to deep blacks. My goal was to make the 2D texture feel three-dimensional by carefully applying highlights and shadows to add depth and form. It was a fun challenge to bring the character to life through texture work alone, focusing on stylization and visual impact.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+
   <script>
     const alienModal = document.getElementById("alienModal");
     const alienThumb = document.getElementById("alien-thumb");
@@ -110,6 +129,14 @@
     dogClose.onclick = () => { dogModal.style.display = "none"; };
 
 
+        const funkoModal = document.getElementById("funkoModal");
+    const funkoThumb = document.getElementById("funko-thumb");
+    const funkoClose = document.querySelector(".funko-close");
+
+    funkoThumb.onclick = () => { funkoModal.style.display = "block"; };
+    funkoClose.onclick = () => { funkoModal.style.display = "none"; };
+
+
 
     window.onclick = (e) => {
       if (e.target === alienModal) {
@@ -120,6 +147,10 @@
 
       if (e.target === dogModal) {
         dogModal.style.display = "none";
+      }
+
+       if (e.target === funkoModal) {
+        funkoModal.style.display = "none";
       }
       
     };
