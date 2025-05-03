@@ -35,7 +35,7 @@
       <img src="Assets/Vending_Pic.png" alt="Vending Machine" class="clickable" id="vending-thumb" />
       <img src="Assets/Box_Pic.png" alt="Mystery Box" class="clickable" id="box-thumb" />
      <img src="Assets/Coin_Pic.png" alt="Coin" class="clickable" id="coin-thumb" />
-      <img src="Assets/Bridge.png" alt="Bridge" />
+      <img src="Assets/Bridge.png" alt="Bridge" class="clickable" id="bridge-thumb" />
     </div>
   </main>
 
@@ -140,6 +140,20 @@
     </div>
   </div>
 
+  <!-- Bridge Modal -->
+    <div id="bridgeModal" class="modal">
+      <div class="modal-content">
+        <span class="close bridge-close">&times;</span>
+        <img src="Assets/Bridge.png" alt="Bridge" />
+        <img src="Assets/Bridge002UV_Texture.png" alt="Bridge Texture" />
+        <div class="modal-text">
+          <p>
+            This is a bridge I textured for <em>GMU Drift</em>, featured in the Mason Pond map. To keep it authentic, I used real-life reference photos of the actual bridge on campus and worked closely to match its look and feel in-game. It was a fun challenge blending realism with stylized game design.
+          </p>
+        </div>
+      </div>
+    </div>
+
 
   <script>
     const backpackModal = document.getElementById("backpackModal");
@@ -192,6 +206,14 @@
     coinClose.onclick = () => { coinModal.style.display = "none"; };
 
 
+     const bridgeModal = document.getElementById("bridgeModal");
+      const bridgeThumb = document.getElementById("bridge-thumb");
+      const bridgeClose = document.querySelector(".bridge-close");
+
+      bridgeThumb.onclick = () => { bridgeModal.style.display = "block"; };
+      bridgeClose.onclick = () => { bridgeModal.style.display = "none"; };
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
@@ -205,6 +227,8 @@
        if (e.target === coinModal) {
         coinModal.style.display = "none";
       }
+
+        if (e.target === bridgeModal) bridgeModal.style.display = "none";
     };
   </script>
 </body>
