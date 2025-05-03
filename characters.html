@@ -34,7 +34,7 @@
       <img src="Assets/Raccoon.png" alt="Raccoon Character" class="clickable" id="raccoon-thumb" />
       <img src="Assets/Char_Select.png" alt="Character Select UI" class="clickable" id="treat-thumb" />
       <img src="Assets/Chosen_One_2.png" alt="The Chosen One" class="clickable" id="drift-thumb" />
-      <img src="Assets/Stalking.png" alt="Stalking Animation Still" />
+     <img src="Assets/Stalking.png" alt="Stalking Animation Still" class="clickable" id="stalking-thumb" />
     </div>
   </main>
 
@@ -124,6 +124,27 @@
     </div>
   </div>
 
+  <!-- Stalking Modal -->
+<div id="stalkingModal" class="modal">
+  <div class="modal-content">
+    <span class="close stalking-close">&times;</span>
+    <img src="Assets/Stalking.png" alt="Stalking Full View" />
+    <video controls width="100%" style="max-width: 600px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      <source src="Assets/sound/Stalking_Perez.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="modal-text">
+      <p>
+        This was a 2D animation project titled <em>Stalking</em>, where I experimented heavily with purples to create a mysterious and moody atmosphere. The story follows a young girl who senses a slow, creeping presence trailing behind her as she walks through the woods. Just as the tension builds and she prepares to confront whatever is following her, the creature suddenly gives chase.
+      </p>
+      <p>
+        But in a twist of humor, it turns out to be nothing more than her chunky old cat, simply looking for food. This project was a fun mix of suspense and comedy, and a great opportunity to play with lighting, pacing, and visual storytelling.
+      </p>
+    </div>
+  </div>
+</div>
+
+
   <script>
     const lokiModal = document.getElementById("lokiModal");
     const lokiThumb = document.getElementById("loki-thumb");
@@ -141,6 +162,10 @@
     const driftThumb = document.getElementById("drift-thumb");
     const driftClose = document.querySelector(".drift-close");
 
+    const stalkingModal = document.getElementById("stalkingModal");
+const stalkingThumb = document.getElementById("stalking-thumb");
+const stalkingClose = document.querySelector(".stalking-close");
+
     lokiThumb.onclick = () => { lokiModal.style.display = "block"; };
     lokiClose.onclick = () => { lokiModal.style.display = "none"; };
 
@@ -153,12 +178,14 @@
     driftThumb.onclick = () => { driftModal.style.display = "block"; };
     driftClose.onclick = () => { driftModal.style.display = "none"; };
 
-    window.onclick = (e) => {
-      if (e.target === lokiModal) lokiModal.style.display = "none";
-      if (e.target === raccoonModal) raccoonModal.style.display = "none";
-      if (e.target === treatModal) treatModal.style.display = "none";
-      if (e.target === driftModal) driftModal.style.display = "none";
-    };
-  </script>
-</body>
-</html>
+    stalkingThumb.onclick = () => stalkingModal.style.display = "block";
+stalkingClose.onclick = () => stalkingModal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === lokiModal) lokiModal.style.display = "none";
+    if (e.target === raccoonModal) raccoonModal.style.display = "none";
+    if (e.target === treatModal) treatModal.style.display = "none";
+    if (e.target === driftModal) driftModal.style.display = "none";
+    if (e.target === stalkingModal) stalkingModal.style.display = "none";
+  };
+</script>
