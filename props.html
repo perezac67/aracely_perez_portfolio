@@ -30,7 +30,7 @@
 
     <div class="food-gallery">
       <img src="Assets/BackPack_Pixel.png" alt="Backpack" class="clickable" id="backpack-thumb" />
-      <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" />
+      <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" class="clickable" id="carrot-thumb" />
       <img src="Assets/Closing_Sign_Pixel.png" alt="Closing Sign" />
       <img src="Assets/Home_Button_Pixel .png" alt="Home Button" />
       <img src="Assets/Mooney_Pixel .png" alt="Mooney Character" />
@@ -59,6 +59,21 @@
     </div>
   </div>
 
+
+      <!-- Carrot Modal -->
+    <div id="carrotModal" class="modal">
+      <div class="modal-content">
+        <span class="close carrot-close">&times;</span>
+        <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant Full View" />
+        <div class="modal-text">
+          <p>
+            This is a carrot plant designed for <em>A Warrior’s Recipe</em>. It was a special gift to Bart, and he waters it lovingly every day. The plant is small, with a baby carrot just starting to grow—cherished by Bart as a symbol of care, growth, and his journey as both a warrior and a chef. I wanted this prop to feel personal and meaningful, adding a quiet touch of warmth to the game’s world.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
   <script>
     const backpackModal = document.getElementById("backpackModal");
     const backpackThumb = document.getElementById("backpack-thumb");
@@ -67,9 +82,20 @@
     backpackThumb.onclick = () => { backpackModal.style.display = "block"; };
     backpackClose.onclick = () => { backpackModal.style.display = "none"; };
 
+
+
+       const carrotModal = document.getElementById("carrotModal");
+      const carrotThumb = document.getElementById("carrot-thumb");
+      const carrotClose = document.querySelector(".carrot-close");
+
+      carrotThumb.onclick = () => { carrotModal.style.display = "block"; };
+      carrotClose.onclick = () => { carrotModal.style.display = "none"; };
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
+        if (e.target === carrotModal) carrotModal.style.display = "none";
       }
     };
   </script>
