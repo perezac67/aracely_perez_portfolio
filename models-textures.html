@@ -30,7 +30,7 @@
 
     <div class="food-gallery">
       <img src="Assets/Alien_Model.png" alt="Alien Model" class="clickable" id="alien-thumb" />
-      <img src="Assets/Cat_Front.png" alt="Cat Model" />
+     <img src="Assets/Cat_Front.png" alt="Cat Model" class="clickable" id="cat-thumb" />
       <img src="Assets/Dog_Front.png" alt="Dog Model" />
       <img src="Assets/Funko_Front.png" alt="Funko Model" />
     </div>
@@ -50,6 +50,23 @@
     </div>
   </div>
 
+
+  
+  <!-- Cat Modal -->
+  <div id="catModal" class="modal">
+    <div class="modal-content">
+      <span class="close cat-close">&times;</span>
+      <img src="Assets/Cat_Front.png" alt="Cat Front" />
+      <img src="Assets/Cat_Back.png" alt="Cat Back" />
+      <img src="Assets/Cat_Uvs.png" alt="Cat UVs" />
+      <div class="modal-text">
+        <p>
+          This is a cat character texture I designed for the game <em>Treat Racer</em>. While I didn’t model the cat itself, all of the textures and the overall design were created by me. The character is based on a real-life calico cat, and I made sure to capture her unique mix of colors and playful personality. The result is a vibrant, goofy racer that fits perfectly into the fun, over-the-top world of the game.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <script>
     const alienModal = document.getElementById("alienModal");
     const alienThumb = document.getElementById("alien-thumb");
@@ -58,10 +75,21 @@
     alienThumb.onclick = () => { alienModal.style.display = "block"; };
     alienClose.onclick = () => { alienModal.style.display = "none"; };
 
+    const catModal = document.getElementById("catModal");
+    const catThumb = document.getElementById("cat-thumb");
+    const catClose = document.querySelector(".cat-close");
+
+       catThumb.onclick = () => catModal.style.display = "block";
+    catClose.onclick = () => catModal.style.display = "none";
+
+
     window.onclick = (e) => {
       if (e.target === alienModal) {
         alienModal.style.display = "none";
       }
+
+      if (e.target === catModal) catModal.style.display = "none";
+      
     };
   </script>
 </body>
