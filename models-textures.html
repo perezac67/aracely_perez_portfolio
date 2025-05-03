@@ -29,11 +29,40 @@
     </div>
 
     <div class="food-gallery">
-      <img src="Assets/Alien_Model.png" alt="Alien Model" />
+      <img src="Assets/Alien_Model.png" alt="Alien Model" class="clickable" id="alien-thumb" />
       <img src="Assets/Cat_Front.png" alt="Cat Model" />
       <img src="Assets/Dog_Front.png" alt="Dog Model" />
       <img src="Assets/Funko_Front.png" alt="Funko Model" />
     </div>
   </main>
+
+  <!-- Alien Modal -->
+  <div id="alienModal" class="modal">
+    <div class="modal-content">
+      <span class="close alien-close">&times;</span>
+      <img src="Assets/Alien_Model.png" alt="Alien Model Full View" />
+      <img src="Assets/Ailen_Uvs.png" alt="Alien UV Map" />
+      <div class="modal-text">
+        <p>
+          This is a 3D character model I created entirely on my own for a mini-game called <em>Voloraix</em>. I handled everything from modeling and UV mapping to texturing. My focus was on adding as much detail as possible to emphasize the character’s muscular build—carefully sculpting the anatomy and highlighting features like defined muscles and prominent veins on his head. It was a great exercise in character design and pushing texture work to enhance form and personality.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const alienModal = document.getElementById("alienModal");
+    const alienThumb = document.getElementById("alien-thumb");
+    const alienClose = document.querySelector(".alien-close");
+
+    alienThumb.onclick = () => { alienModal.style.display = "block"; };
+    alienClose.onclick = () => { alienModal.style.display = "none"; };
+
+    window.onclick = (e) => {
+      if (e.target === alienModal) {
+        alienModal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
