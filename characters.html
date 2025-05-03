@@ -31,14 +31,14 @@
     <div class="food-gallery">
       <img src="Assets/Hare_Pixel.png" alt="Hare Pixel Character" />
       <img src="Assets/Loki_Painting.png" alt="Loki Painting" class="clickable" id="loki-thumb" />
-      <img src="Assets/Raccoon.png" alt="Raccoon Character" />
+      <img src="Assets/Raccoon.png" alt="Raccoon Character" class="clickable" id="raccoon-thumb" />
       <img src="Assets/Char_Select.png" alt="Character Select UI" class="clickable" id="treat-thumb" />
       <img src="Assets/Chosen_One_2.png" alt="The Chosen One" />
       <img src="Assets/Stalking.png" alt="Stalking Animation Still" />
     </div>
   </main>
 
-  <!-- Loki Modal -->
+  <!-- Modal for Loki -->
   <div id="lokiModal" class="modal">
     <div class="modal-content">
       <span class="close loki-close">&times;</span>
@@ -54,59 +54,76 @@
     </div>
   </div>
 
-  <!-- Treat Racer Modal -->
+  <!-- Modal for Treat Racer -->
   <div id="treatModal" class="modal">
     <div class="modal-content">
       <span class="close treat-close">&times;</span>
-      <img src="Assets/Sketch_Treat.png" alt="Treat Sketch" />
-      <img src="Assets/PIP_POP_PAP_2D.png" alt="Pip Pop Pap Lineup" />
-      <img src="Assets/Char_Select.png" alt="Treat Racer Character Select" />
-      <img src="Assets/Treat_Racer_Menu_Screen.png" alt="Treat Racer Menu UI" />
+      <div class="modal-gallery">
+        <img src="Assets/Sketch_Treat.png" alt="Sketch Treat" />
+        <img src="Assets/PIP_POP_PAP_2D.png" alt="2D Pets" />
+        <img src="Assets/Char_Select.png" alt="Character Select" />
+        <img src="Assets/Treat_Racer_Menu_Screen.png" alt="Final Treat Racer Menu" />
+      </div>
       <div class="modal-text">
         <p>
-          Welcome to Treat Racer — a silly, high-energy game where you play as Pop the cat and race against Pap the dog and Pip the hamster, each mounted on wacky vacuums. The first animal to reach the finish line wins a mountain of tasty pet treats—and, of course, ultimate bragging rights.
+          Welcome to Treat Racer — a silly, high-energy game where you play as Pop the cat and race against Pap the dog and Pip the hamster, each mounted on wacky vacuums. The first animal to reach the finish line wins a mountain of tasty pet treats—and, of course, ultimate bragging rights. The game leans fully into a goofy and lighthearted style, and I reflected that in my design work by keeping things simple.
         </p>
         <p>
-          The game leans fully into a goofy and lighthearted style, and I reflected that in my design work by keeping things simple. Each pet racer was based on real animals I’ve known, which made the process more personal and fun. Pop was inspired by the lead coder’s beautifully colored cat, full of grace and sass. Pap, the wide-eyed, slightly clueless dog, was modeled after my cousin’s hilarious pug. And Pip, the chaotic little hamster, was inspired by my friend’s tiny mouse who never seemed to sit still.
-        </p>
-        <p>
-          Designing these characters was not only creatively rewarding but also a way to bring a bit of real-world charm into our over-the-top racing world.
+          Each pet racer was based on real animals I’ve known, which made the process more personal and fun. Pop was inspired by the lead coder’s beautifully colored cat, full of grace and sass. Pap, the wide-eyed, slightly clueless dog, was modeled after my cousin’s hilarious pug. And Pip, the chaotic little hamster, was inspired by my friend’s tiny mouse who never seemed to sit still. Designing these characters was not only creatively rewarding but also a way to bring a bit of real-world charm into our over-the-top racing world.
         </p>
       </div>
     </div>
   </div>
 
+  <!-- Modal for Raccoon -->
+  <div id="raccoonModal" class="modal">
+    <div class="modal-content">
+      <span class="close raccoon-close">&times;</span>
+      <div class="modal-gallery">
+        <img src="Assets/Raccoon_Sketch.png" alt="Raccoon Sketch" />
+        <img src="Assets/Raccon_Dis.png" alt="Raccoon Design" />
+        <img src="Assets/Raccoon_Sprite.png" alt="Raccoon Sprite" />
+        <img src="Assets/Raccoon.png" alt="Final Raccoon" />
+        <img src="Assets/Raccoon_Raid_GIF.gif" alt="Raccoon Raid GIF" />
+      </div>
+      <div class="modal-text">
+        <p>
+          Here’s a character I created named Rico for my 2D platformer game, Raccoon Raid. I designed and built this entire project myself — everything from the character animations and props to the backgrounds and gameplay was created by me in Unity.
+        </p>
+        <p>
+          In the game, you play as Rico the raccoon, trying to sneak safely across chaotic neighborhood backyards without getting caught by angry grandmas or falling for booby traps set by annoyed residents. To defend yourself, you can launch poop projectiles and outsmart your enemies with clever timing. It’s a silly, fast-paced adventure packed with personality and a whole lot of raccoon mischief.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
   <script>
-    // Loki Modal
     const lokiModal = document.getElementById("lokiModal");
     const lokiThumb = document.getElementById("loki-thumb");
     const lokiClose = document.querySelector(".loki-close");
 
-    lokiThumb.onclick = () => {
-      lokiModal.style.display = "block";
-    };
+    lokiThumb.onclick = () => lokiModal.style.display = "block";
+    lokiClose.onclick = () => lokiModal.style.display = "none";
 
-    lokiClose.onclick = () => {
-      lokiModal.style.display = "none";
-    };
-
-    // Treat Racer Modal
     const treatModal = document.getElementById("treatModal");
     const treatThumb = document.getElementById("treat-thumb");
     const treatClose = document.querySelector(".treat-close");
 
-    treatThumb.onclick = () => {
-      treatModal.style.display = "block";
-    };
+    treatThumb.onclick = () => treatModal.style.display = "block";
+    treatClose.onclick = () => treatModal.style.display = "none";
 
-    treatClose.onclick = () => {
-      treatModal.style.display = "none";
-    };
+    const raccoonModal = document.getElementById("raccoonModal");
+    const raccoonThumb = document.getElementById("raccoon-thumb");
+    const raccoonClose = document.querySelector(".raccoon-close");
 
-    // Close modals when clicking outside
+    raccoonThumb.onclick = () => raccoonModal.style.display = "block";
+    raccoonClose.onclick = () => raccoonModal.style.display = "none";
+
     window.onclick = (e) => {
       if (e.target === lokiModal) lokiModal.style.display = "none";
       if (e.target === treatModal) treatModal.style.display = "none";
+      if (e.target === raccoonModal) raccoonModal.style.display = "none";
     };
   </script>
 </body>
