@@ -32,13 +32,13 @@
       <img src="Assets/Hare_Pixel.png" alt="Hare Pixel Character" />
       <img src="Assets/Loki_Painting.png" alt="Loki Painting" class="clickable" id="loki-thumb" />
       <img src="Assets/Raccoon.png" alt="Raccoon Character" />
-      <img src="Assets/Char_Select.png" alt="Character Select UI" />
+      <img src="Assets/Char_Select.png" alt="Character Select UI" class="clickable" id="treat-thumb" />
+      <img src="Assets/Chosen_One_2.png" alt="The Chosen One" />
       <img src="Assets/Stalking.png" alt="Stalking Animation Still" />
-      <img src="Assets/GMU_DRIFT.png" alt="GMU Drift Thumbnail" class="clickable" id="gmu-thumb" />
     </div>
   </main>
 
-  <!-- Modal for Loki -->
+  <!-- Loki Modal -->
   <div id="lokiModal" class="modal">
     <div class="modal-content">
       <span class="close loki-close">&times;</span>
@@ -54,25 +54,28 @@
     </div>
   </div>
 
-  <!-- Modal for GMU Drift -->
-  <div id="gmuModal" class="modal">
+  <!-- Treat Racer Modal -->
+  <div id="treatModal" class="modal">
     <div class="modal-content">
-      <span class="close gmu-close">&times;</span>
-      <div class="modal-gallery">
-        <img src="Assets/Start_Menu_3_Sketch.png" alt="Menu Sketch" />
-        <img src="Assets/Chosen_One_1.png" alt="Chosen One Concept 1" />
-        <img src="Assets/Chosen_One_2.png" alt="Chosen One Concept 2" />
-        <img src="Assets/GMU_DRIFT.png" alt="Final GMU Drift Scene" />
-      </div>
+      <span class="close treat-close">&times;</span>
+      <img src="Assets/Sketch_Treat.png" alt="Treat Sketch" />
+      <img src="Assets/PIP_POP_PAP_2D.png" alt="Pip Pop Pap Lineup" />
+      <img src="Assets/Char_Select.png" alt="Treat Racer Character Select" />
+      <img src="Assets/Treat_Racer_Menu_Screen.png" alt="Treat Racer Menu UI" />
       <div class="modal-text">
-        <p>This is a main menu scene I created for a game project. I began the process by sketching three different layout concepts and presenting them to the design team. After some discussion, they chose one that best captured the tone we were aiming for. With that direction locked in, I moved forward by refining the sketch, adding color, lighting, and detailed elements to bring the scene to life.</p>
-        <p>However, the design evolved during development. I received feedback requesting the removal of the character positioned at the bottom of the screen to create a more open and immersive feel. The team also wanted the background to feel more alive, so I added new elements and visual depth to better reflect the world of the game. Additionally, since this scene was originally designed early in the project, I had to go back and update the go-karts to match the final in-game designs for consistency.</p>
-        <p>What you see here is the finalized version of the main menu, complete with the user interface layered in. It was a collaborative process that helped me grow not only in visual design but also in adapting to creative feedback and iterative changes.</p>
+        <p>
+          Welcome to Treat Racer — a silly, high-energy game where you play as Pop the cat and race against Pap the dog and Pip the hamster, each mounted on wacky vacuums. The first animal to reach the finish line wins a mountain of tasty pet treats—and, of course, ultimate bragging rights.
+        </p>
+        <p>
+          The game leans fully into a goofy and lighthearted style, and I reflected that in my design work by keeping things simple. Each pet racer was based on real animals I’ve known, which made the process more personal and fun. Pop was inspired by the lead coder’s beautifully colored cat, full of grace and sass. Pap, the wide-eyed, slightly clueless dog, was modeled after my cousin’s hilarious pug. And Pip, the chaotic little hamster, was inspired by my friend’s tiny mouse who never seemed to sit still.
+        </p>
+        <p>
+          Designing these characters was not only creatively rewarding but also a way to bring a bit of real-world charm into our over-the-top racing world.
+        </p>
       </div>
     </div>
   </div>
 
-  <!-- Modal Scripts -->
   <script>
     // Loki Modal
     const lokiModal = document.getElementById("lokiModal");
@@ -87,23 +90,23 @@
       lokiModal.style.display = "none";
     };
 
-    // GMU Drift Modal
-    const gmuModal = document.getElementById("gmuModal");
-    const gmuThumb = document.getElementById("gmu-thumb");
-    const gmuClose = document.querySelector(".gmu-close");
+    // Treat Racer Modal
+    const treatModal = document.getElementById("treatModal");
+    const treatThumb = document.getElementById("treat-thumb");
+    const treatClose = document.querySelector(".treat-close");
 
-    gmuThumb.onclick = () => {
-      gmuModal.style.display = "block";
+    treatThumb.onclick = () => {
+      treatModal.style.display = "block";
     };
 
-    gmuClose.onclick = () => {
-      gmuModal.style.display = "none";
+    treatClose.onclick = () => {
+      treatModal.style.display = "none";
     };
 
-    // Global click outside to close modals
+    // Close modals when clicking outside
     window.onclick = (e) => {
       if (e.target === lokiModal) lokiModal.style.display = "none";
-      if (e.target === gmuModal) gmuModal.style.display = "none";
+      if (e.target === treatModal) treatModal.style.display = "none";
     };
   </script>
 </body>
