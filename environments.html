@@ -37,7 +37,7 @@
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" class="clickable" id="rockflower-thumb" />
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
        <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" class="clickable" id="warriorsmenu-thumb" />
-      <img src="Assets/water_Patch .png" alt="Water Patch" />
+     <img src="Assets/water_Patch .png" alt="Water Patch" class="clickable" id="water-thumb" />
       <img src="Assets/House_1.png" alt="House 1" />
       <img src="Assets/House_2.png" alt="House 2" />
     </div>
@@ -130,6 +130,21 @@
   </div>
 
 
+    <!-- Water Patch Modal -->
+  <div id="waterModal" class="modal">
+    <div class="modal-content">
+      <span class="close water-close">&times;</span>
+      <img src="Assets/water_Patch .png" alt="Water Patch Full View" />
+      <div class="modal-text">
+        <p>
+          This pixel asset features a small patch of bright, shimmering water designed to bring a sense of life to the environment. The vibrant blue tones and subtle highlights help it stand out as a focal point in natural scenes, adding contrast and movement to otherwise static landscapes.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
 <script>
   // City Modal
   const cityModal = document.getElementById("cityModal");
@@ -196,6 +211,19 @@
     warriorsmenuClose.onclick = () => warriorsmenuModal.style.display = "none";
 
 
+  const waterModal = document.getElementById("waterModal");
+    const waterThumb = document.getElementById("water-thumb");
+    const waterClose = document.querySelector(".water-close");
+
+    waterThumb.onclick = () => {
+      waterModal.style.display = "block";
+    };
+
+    waterClose.onclick = () => {
+      waterModal.style.display = "none";
+    };
+
+
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
@@ -204,5 +232,6 @@
     if (e.target === purpleRockModal) purpleRockModal.style.display = "none";
      if (e.target === rockflowerModal) rockflowerModal.style.display = "none";
     if (e.target === warriorsmenuModal) warriorsmenuModal.style.display = "none";
+    if (e.target === waterModal) waterModal.style.display = "none";
   };
 </script>
