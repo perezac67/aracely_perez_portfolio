@@ -31,11 +31,8 @@
     <div class="food-gallery">
       <img src="Assets/BackPack_Pixel.png" alt="Backpack" class="clickable" id="backpack-thumb" />
       <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" class="clickable" id="carrot-thumb" />
-      <img src="Assets/Home_Button_Pixel .png" alt="Home Button" />
-      <img src="Assets/Skipper.png" alt="Skipper" />
-      <img src="Assets/Updated_Tire.png" alt="Tire" />
+   <img src="Assets/Skipper.png" alt="Skipper" class="clickable" id="skipper-thumb" />
       <img src="Assets/Vending_Pic.png" alt="Vending Machine" />
-      <img src="Assets/Front_Golf.png" alt="Golf Cart Front" />
       <img src="Assets/Box_Pic.png" alt="Box" />
       <img src="Assets/Coin_Pic.png" alt="Coin" />
       <img src="Assets/Bridge.png" alt="Bridge" />
@@ -77,6 +74,26 @@
     </div>
 
 
+   <!-- Car Prop Modal -->
+  <div id="skipperModal" class="modal">
+    <div class="modal-content">
+      <span class="close skipper-close">&times;</span>
+      <img src="Assets/Skipper.png" alt="Skipper View" />
+      <img src="Assets/StarSkipperUV_Texture.png" alt="Skipper UV Texture" />
+      <img src="Assets/Skipper_GIF.gif" alt="Skipper GIF" />
+      <img src="Assets/Front_Golf.png" alt="Golf Front" />
+      <img src="Assets/Golf_Kart_UV_Texture.png" alt="Golf Kart Texture" />
+      <img src="Assets/Golf_Kart_GIF.gif" alt="Golf Kart GIF" />
+      <img src="Assets/Updated_Tire.png" alt="Tire" />
+      <div class="modal-text">
+        <p>
+          Here are two car prop models and their tires that I textured for the game <em>GMU Drift</em>. While I didn’t create the 3D models themselves, all of the texturing was done by me. It was a collaborative process with the entire art team, and it was incredibly satisfying to create something that both the modelers and I were proud of. The visual theme was centered around the GMU aesthetic, so I incorporated lots of greens and yellows, using soft shading and avoiding harsh lines to maintain a clean, cohesive look that matched the overall style of the game.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     const backpackModal = document.getElementById("backpackModal");
     const backpackThumb = document.getElementById("backpack-thumb");
@@ -95,10 +112,20 @@
       carrotClose.onclick = () => { carrotModal.style.display = "none"; };
 
 
+
+    const skipperModal = document.getElementById("skipperModal");
+    const skipperThumb = document.getElementById("skipper-thumb");
+    const skipperClose = document.querySelector(".skipper-close");
+
+    skipperThumb.onclick = () => { skipperModal.style.display = "block"; };
+    skipperClose.onclick = () => { skipperModal.style.display = "none"; };
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
         if (e.target === carrotModal) carrotModal.style.display = "none";
+         if (e.target === skipperModal) skipperModal.style.display = "none";
       }
     };
   </script>
