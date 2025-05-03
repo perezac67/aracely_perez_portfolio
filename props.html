@@ -32,7 +32,7 @@
       <img src="Assets/BackPack_Pixel.png" alt="Backpack" class="clickable" id="backpack-thumb" />
       <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" class="clickable" id="carrot-thumb" />
    <img src="Assets/Skipper.png" alt="Skipper" class="clickable" id="skipper-thumb" />
-      <img src="Assets/Vending_Pic.png" alt="Vending Machine" />
+      <img src="Assets/Vending_Pic.png" alt="Vending Machine" class="clickable" id="vending-thumb" />
       <img src="Assets/Box_Pic.png" alt="Box" />
       <img src="Assets/Coin_Pic.png" alt="Coin" />
       <img src="Assets/Bridge.png" alt="Bridge" />
@@ -94,6 +94,21 @@
   </div>
 
 
+   <!-- Vending Modal -->
+    <div id="vendingModal" class="modal">
+      <div class="modal-content">
+        <span class="close vending-close">&times;</span>
+        <img src="Assets/Vending_Pic.png" alt="Vending Machine Full View" />
+        <img src="Assets/VendingMachine_UV_Texture.png" alt="Vending Machine UV Texture" />
+        <div class="modal-text">
+          <p>
+            This is a vending machine texture prop I created for <em>GMU Drift</em>. I designed a variety of off-brand snacks inspired by popular chips, candies, and drinks to fill the inside of the machine. Each item features bright, eye-catching colors and playful packaging, packed with detail to make the interior feel lively and believable. It was a fun opportunity to add humor and personality to a background prop while maintaining the vibrant, stylized look of the game.
+          </p>
+        </div>
+      </div>
+    </div>
+
+
   <script>
     const backpackModal = document.getElementById("backpackModal");
     const backpackThumb = document.getElementById("backpack-thumb");
@@ -121,11 +136,20 @@
     skipperClose.onclick = () => { skipperModal.style.display = "none"; };
 
 
+     const vendingModal = document.getElementById("vendingModal");
+      const vendingThumb = document.getElementById("vending-thumb");
+      const vendingClose = document.querySelector(".vending-close");
+
+      vendingThumb.onclick = () => vendingModal.style.display = "block";
+      vendingClose.onclick = () => vendingModal.style.display = "none";
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
         if (e.target === carrotModal) carrotModal.style.display = "none";
          if (e.target === skipperModal) skipperModal.style.display = "none";
+        if (e.target === vendingModal) vendingModal.style.display = "none";
       }
     };
   </script>
