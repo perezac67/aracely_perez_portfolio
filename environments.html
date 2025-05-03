@@ -36,7 +36,7 @@
        <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" class="clickable" id="purple-rock-thumb" />
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" class="clickable" id="rockflower-thumb" />
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
-      <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" />
+       <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" class="clickable" id="warriorsmenu-thumb" />
       <img src="Assets/water_Patch .png" alt="Water Patch" />
       <img src="Assets/House_1.png" alt="House 1" />
       <img src="Assets/House_2.png" alt="House 2" />
@@ -113,6 +113,22 @@
     </div>
   </div>
 
+   <!-- Warrior's Menu Modal -->
+  <div id="warriorsmenuModal" class="modal">
+    <div class="modal-content">
+      <span class="close warriorsmenu-close">&times;</span>
+      <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu Full View" />
+      <div class="modal-text">
+        <p>
+          This is the main menu screen design for my game <em>A Warrior’s Recipe</em>. It features Bart, the main character, alongside his trusty sidekick and sous-chef, Peppo, both geared up and ready for battle with their kitchen-themed weapons. Behind them loom food-themed monsters, setting the stage for the flavorful chaos ahead.
+        </p>
+        <p>
+          The composition captures the game’s unique blend of culinary charm and action-packed adventure, giving players an exciting glimpse of the delicious battles to come.
+        </p>
+      </div>
+    </div>
+  </div>
+
 
 <script>
   // City Modal
@@ -156,6 +172,8 @@
     purpleRockThumb.onclick = () => purpleRockModal.style.display = "block";
     purpleRockClose.onclick = () => purpleRockModal.style.display = "none";
 
+  
+
   const rockflowerModal = document.getElementById("rockflowerModal");
     const rockflowerThumb = document.getElementById("rockflower-thumb");
     const rockflowerClose = document.querySelector(".rockflower-close");
@@ -169,6 +187,15 @@
     };
 
 
+
+  const warriorsmenuModal = document.getElementById("warriorsmenuModal");
+    const warriorsmenuThumb = document.getElementById("warriorsmenu-thumb");
+    const warriorsmenuClose = document.querySelector(".warriorsmenu-close");
+
+    warriorsmenuThumb.onclick = () => warriorsmenuModal.style.display = "block";
+    warriorsmenuClose.onclick = () => warriorsmenuModal.style.display = "none";
+
+
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
@@ -176,5 +203,6 @@
     if (e.target === caveModal) caveModal.style.display = "none"; 
     if (e.target === purpleRockModal) purpleRockModal.style.display = "none";
      if (e.target === rockflowerModal) rockflowerModal.style.display = "none";
+    if (e.target === warriorsmenuModal) warriorsmenuModal.style.display = "none";
   };
 </script>
