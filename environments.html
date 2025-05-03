@@ -31,7 +31,7 @@
     </div>
 
     <div class="food-gallery">
-      <img src="Assets/Cave_pixel.png" alt="Cave Environment" />
+     <img src="Assets/Cave_pixel.png" alt="Cave Environment" class="clickable" id="cave-thumb" />
       <img src="Assets/City_Pixel.png" alt="City Environment" class="clickable" id="city-thumb" />
       <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" />
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" />
@@ -75,6 +75,19 @@
   </div>
 </div>
 
+   <!-- Modal for Cave -->
+  <div id="caveModal" class="modal">
+    <div class="modal-content">
+      <span class="close cave-close">&times;</span>
+      <img src="Assets/Cave_pixel.png" alt="Cave Full View" />
+      <div class="modal-text">
+        <p>
+          This cave scene depicts a magical, otherworldly environment where vibrant blue water glows from within the cavern, casting soft, ethereal light across the rocky walls. The use of rich, layered blues throughout the piece helps create a cohesive and immersive atmosphere, evoking a sense of mystery and calm. I focused on capturing the natural glow and reflections to make the scene feel alive and enchanted, like a hidden sanctuary waiting to be discovered.
+        </p>
+      </div>
+    </div>
+  </div>
+
 
 <script>
   // City Modal
@@ -103,9 +116,19 @@
     sunsetModal.style.display = "none";
   };
 
+  // Cave Modal
+    const caveModal = document.getElementById("caveModal");
+    const caveThumb = document.getElementById("cave-thumb");
+    const caveClose = document.querySelector(".cave-close");
+
+    caveThumb.onclick = () => caveModal.style.display = "block";
+    caveClose.onclick = () => caveModal.style.display = "none";
+
+
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
     if (e.target === sunsetModal) sunsetModal.style.display = "none";
+    if (e.target === caveModal) caveModal.style.display = "none"; 
   };
 </script>
