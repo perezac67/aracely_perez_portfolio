@@ -33,7 +33,7 @@
       <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" class="clickable" id="carrot-thumb" />
    <img src="Assets/Skipper.png" alt="Skipper" class="clickable" id="skipper-thumb" />
       <img src="Assets/Vending_Pic.png" alt="Vending Machine" class="clickable" id="vending-thumb" />
-      <img src="Assets/Box_Pic.png" alt="Box" />
+      <img src="Assets/Box_Pic.png" alt="Mystery Box" class="clickable" id="box-thumb" />
       <img src="Assets/Coin_Pic.png" alt="Coin" />
       <img src="Assets/Bridge.png" alt="Bridge" />
     </div>
@@ -109,6 +109,22 @@
     </div>
 
 
+    <!-- Box Modal -->
+  <div id="boxModal" class="modal">
+    <div class="modal-content">
+      <span class="close box-close">&times;</span>
+      <img src="Assets/Box_Pic.png" alt="Mystery Box Full View" />
+      <img src="Assets/Box_GIF.gif" alt="Mystery Box GIF" />
+      <img src="Assets/MysteryBoxUV_Texture.png" alt="Mystery Box UV Texture" />
+      <div class="modal-text">
+        <p>
+          Here is a mystery box I textured for <em>GMU Drift</em>. I wanted to give it a magical, eye-catching look using a vibrant mix of colors. To keep it tied to the GMU theme, I incorporated the university logo into the design, blending school spirit with a sense of wonder. The result is a bold, colorful prop that stands out while still fitting within the game’s overall aesthetic.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     const backpackModal = document.getElementById("backpackModal");
     const backpackThumb = document.getElementById("backpack-thumb");
@@ -144,12 +160,23 @@
       vendingClose.onclick = () => vendingModal.style.display = "none";
 
 
+    const boxModal = document.getElementById("boxModal");
+    const boxThumb = document.getElementById("box-thumb");
+    const boxClose = document.querySelector(".box-close");
+
+    boxThumb.onclick = () => { boxModal.style.display = "block"; };
+    boxClose.onclick = () => { boxModal.style.display = "none"; };
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
         if (e.target === carrotModal) carrotModal.style.display = "none";
          if (e.target === skipperModal) skipperModal.style.display = "none";
         if (e.target === vendingModal) vendingModal.style.display = "none";
+        if (e.target === boxModal) {
+        boxModal.style.display = "none";
+      }
       }
     };
   </script>
