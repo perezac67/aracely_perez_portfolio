@@ -33,7 +33,7 @@
     <div class="food-gallery">
      <img src="Assets/Cave_pixel.png" alt="Cave Environment" class="clickable" id="cave-thumb" />
       <img src="Assets/City_Pixel.png" alt="City Environment" class="clickable" id="city-thumb" />
-      <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" />
+       <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" class="clickable" id="purple-rock-thumb" />
       <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" />
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
       <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" />
@@ -88,6 +88,18 @@
     </div>
   </div>
 
+    <!-- Purple Rock Modal -->
+  <div id="purpleRockModal" class="modal">
+    <div class="modal-content">
+      <span class="close purple-rock-close">&times;</span>
+      <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock Full View" />
+      <div class="modal-text">
+        <p>This is a small pixel asset I created for my game <em>A Warrior’s Recipe</em>. I wanted to switch things up from a typical rock design and chose an unexpected color to make it stand out.</p>
+        <p>The goal was to add a bit of charm to an otherwise ordinary object, giving the environment a more stylized feel that fits the game's whimsical tone.</p>
+      </div>
+    </div>
+  </div>
+
 
 <script>
   // City Modal
@@ -124,11 +136,19 @@
     caveThumb.onclick = () => caveModal.style.display = "block";
     caveClose.onclick = () => caveModal.style.display = "none";
 
+  // Purple Rock Modal
+    const purpleRockModal = document.getElementById("purpleRockModal");
+    const purpleRockThumb = document.getElementById("purple-rock-thumb");
+    const purpleRockClose = document.querySelector(".purple-rock-close");
+    purpleRockThumb.onclick = () => purpleRockModal.style.display = "block";
+    purpleRockClose.onclick = () => purpleRockModal.style.display = "none";
+
 
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
     if (e.target === sunsetModal) sunsetModal.style.display = "none";
     if (e.target === caveModal) caveModal.style.display = "none"; 
+    if (e.target === purpleRockModal) purpleRockModal.style.display = "none";
   };
 </script>
