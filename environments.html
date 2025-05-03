@@ -34,7 +34,7 @@
      <img src="Assets/Cave_pixel.png" alt="Cave Environment" class="clickable" id="cave-thumb" />
       <img src="Assets/City_Pixel.png" alt="City Environment" class="clickable" id="city-thumb" />
        <img src="Assets/Purple_Rock_Pixel.png" alt="Purple Rock" class="clickable" id="purple-rock-thumb" />
-      <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" />
+      <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers" class="clickable" id="rockflower-thumb" />
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
       <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" />
       <img src="Assets/water_Patch .png" alt="Water Patch" />
@@ -100,6 +100,19 @@
     </div>
   </div>
 
+  <!-- Modal for Rock Flower -->
+  <div id="rockflowerModal" class="modal">
+    <div class="modal-content">
+      <span class="close rockflower-close">&times;</span>
+      <img src="Assets/Rock_Flowers_Pixel.png" alt="Rock Flowers Full View" />
+      <div class="modal-text">
+        <p>
+          This is a simple environmental pixel asset featuring a small grey rock overgrown with moss and dotted with tiny white flowers. Since the rock is quite small, it was a challenge to render the flowers clearly without overwhelming the design—but with careful placement, I was able to make it work.
+        </p>
+      </div>
+    </div>
+  </div>
+
 
 <script>
   // City Modal
@@ -143,6 +156,18 @@
     purpleRockThumb.onclick = () => purpleRockModal.style.display = "block";
     purpleRockClose.onclick = () => purpleRockModal.style.display = "none";
 
+  const rockflowerModal = document.getElementById("rockflowerModal");
+    const rockflowerThumb = document.getElementById("rockflower-thumb");
+    const rockflowerClose = document.querySelector(".rockflower-close");
+
+    rockflowerThumb.onclick = () => {
+      rockflowerModal.style.display = "block";
+    };
+
+    rockflowerClose.onclick = () => {
+      rockflowerModal.style.display = "none";
+    };
+
 
   // Close either modal by clicking outside
   window.onclick = (e) => {
@@ -150,5 +175,6 @@
     if (e.target === sunsetModal) sunsetModal.style.display = "none";
     if (e.target === caveModal) caveModal.style.display = "none"; 
     if (e.target === purpleRockModal) purpleRockModal.style.display = "none";
+     if (e.target === rockflowerModal) rockflowerModal.style.display = "none";
   };
 </script>
