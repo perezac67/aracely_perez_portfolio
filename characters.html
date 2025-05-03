@@ -29,7 +29,7 @@
     </div>
 
     <div class="food-gallery">
-      <img src="Assets/Hare_Pixel.png" alt="Hare Pixel Character" />
+     <img src="Assets/Hare_Pixel.png" alt="Hare Pixel Character" class="clickable" id="hare-thumb" />
       <img src="Assets/Loki_Painting.png" alt="Loki Painting" class="clickable" id="loki-thumb" />
       <img src="Assets/Raccoon.png" alt="Raccoon Character" class="clickable" id="raccoon-thumb" />
       <img src="Assets/Char_Select.png" alt="Character Select UI" class="clickable" id="treat-thumb" />
@@ -144,6 +144,25 @@
   </div>
 </div>
 
+    <!-- Hare Modal -->
+  <div id="hareModal" class="modal">
+    <div class="modal-content">
+      <span class="close hare-close">&times;</span>
+      <img src="Assets/Hare_Pixel.png" alt="Hare Full View" />
+      <div class="modal-text">
+        <p>
+          This was my very first pixel art drawing, and the moment I realized I wanted to continue pursuing pixel art. The hare is only 48 by 48 pixels, but even at that tiny scale, I wanted to give it a sense of motion and personality.
+        </p>
+        <p>
+          This piece was a simple character concept where I focused on capturing charm through silhouette and subtle shading. I experimented with light and shadow to add just enough depth to make the form feel dimensional, without overcomplicating the design.
+        </p>
+        <p>
+          The goal was to keep the character readable and expressive at a small size—perfect for games where clarity and style have to shine through in just a few pixels. It was a fun and rewarding challenge in balancing minimalism with detail to bring the hare to life.
+        </p>
+      </div>
+    </div>
+  </div>
+
 
   <script>
     const lokiModal = document.getElementById("lokiModal");
@@ -166,6 +185,10 @@
 const stalkingThumb = document.getElementById("stalking-thumb");
 const stalkingClose = document.querySelector(".stalking-close");
 
+       const hareModal = document.getElementById("hareModal");
+    const hareThumb = document.getElementById("hare-thumb");
+    const hareClose = document.querySelector(".hare-close");
+
     lokiThumb.onclick = () => { lokiModal.style.display = "block"; };
     lokiClose.onclick = () => { lokiModal.style.display = "none"; };
 
@@ -181,11 +204,15 @@ const stalkingClose = document.querySelector(".stalking-close");
     stalkingThumb.onclick = () => stalkingModal.style.display = "block";
 stalkingClose.onclick = () => stalkingModal.style.display = "none";
 
+        hareThumb.onclick = () => hareModal.style.display = "block";
+    hareClose.onclick = () => hareModal.style.display = "none";
+
   window.onclick = (e) => {
     if (e.target === lokiModal) lokiModal.style.display = "none";
     if (e.target === raccoonModal) raccoonModal.style.display = "none";
     if (e.target === treatModal) treatModal.style.display = "none";
     if (e.target === driftModal) driftModal.style.display = "none";
     if (e.target === stalkingModal) stalkingModal.style.display = "none";
+    if (e.target === hareModal) hareModal.style.display = "none";
   };
 </script>
