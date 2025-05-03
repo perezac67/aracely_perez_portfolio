@@ -38,8 +38,7 @@
       <img src="Assets/Sunset_Pixel.png" alt="Sunset Scene" class="clickable" id="sunset-thumb" />
        <img src="Assets/Warriors_Menu.png" alt="Warrior's Menu UI" class="clickable" id="warriorsmenu-thumb" />
      <img src="Assets/water_Patch .png" alt="Water Patch" class="clickable" id="water-thumb" />
-      <img src="Assets/House_1.png" alt="House 1" />
-      <img src="Assets/House_2.png" alt="House 2" />
+      <img src="Assets/House_1.png" alt="House 1" class="clickable" id="house-thumb" />
     </div>
   </main>
 
@@ -144,6 +143,21 @@
   </div>
 
 
+   <!-- House Modal -->
+  <div id="houseModal" class="modal">
+    <div class="modal-content">
+      <span class="close house-close">&times;</span>
+      <img src="Assets/House_1.png" alt="House 1 Full View" />
+      <img src="Assets/House_2.png" alt="House 2 Full View" />
+      <div class="modal-text">
+        <p>
+          Here are two house background designs for <em>A Warrior’s Recipe</em>. They feature a warm, rustic aesthetic with a cozy, lived-in feel. I used neutral tones to keep the environments grounded — that complements the game’s homestyle. The goal was to make each house feel like a place the characters could truly call home.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
 
 <script>
   // City Modal
@@ -224,6 +238,20 @@
     };
 
 
+
+  const houseModal = document.getElementById("houseModal");
+    const houseThumb = document.getElementById("house-thumb");
+    const houseClose = document.querySelector(".house-close");
+
+    houseThumb.onclick = () => {
+      houseModal.style.display = "block";
+    };
+
+    houseClose.onclick = () => {
+      houseModal.style.display = "none";
+    };
+
+
   // Close either modal by clicking outside
   window.onclick = (e) => {
     if (e.target === cityModal) cityModal.style.display = "none";
@@ -233,5 +261,6 @@
      if (e.target === rockflowerModal) rockflowerModal.style.display = "none";
     if (e.target === warriorsmenuModal) warriorsmenuModal.style.display = "none";
     if (e.target === waterModal) waterModal.style.display = "none";
+    if (e.target === houseModal) houseModal.style.display = "none";
   };
 </script>
