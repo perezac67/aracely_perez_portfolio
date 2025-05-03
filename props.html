@@ -34,7 +34,7 @@
    <img src="Assets/Skipper.png" alt="Skipper" class="clickable" id="skipper-thumb" />
       <img src="Assets/Vending_Pic.png" alt="Vending Machine" class="clickable" id="vending-thumb" />
       <img src="Assets/Box_Pic.png" alt="Mystery Box" class="clickable" id="box-thumb" />
-      <img src="Assets/Coin_Pic.png" alt="Coin" />
+     <img src="Assets/Coin_Pic.png" alt="Coin" class="clickable" id="coin-thumb" />
       <img src="Assets/Bridge.png" alt="Bridge" />
     </div>
   </main>
@@ -125,6 +125,22 @@
   </div>
 
 
+   <!-- Coin Modal -->
+  <div id="coinModal" class="modal">
+    <div class="modal-content">
+      <span class="close coin-close">&times;</span>
+      <img src="Assets/Coin_Pic.png" alt="Coin Full View" />
+      <img src="Assets/Coin_GIF.gif" alt="Coin Animation" />
+      <img src="Assets/CoinUV_Texture.png" alt="Coin UV Texture" />
+      <div class="modal-text">
+        <p>
+          This is the coin texture I created for <em>GMU Drift</em>—a shiny gold coin designed with the GMU theme in mind. I incorporated a smooth golden gradient to give it a polished, valuable feel.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     const backpackModal = document.getElementById("backpackModal");
     const backpackThumb = document.getElementById("backpack-thumb");
@@ -168,6 +184,14 @@
     boxClose.onclick = () => { boxModal.style.display = "none"; };
 
 
+     const coinModal = document.getElementById("coinModal");
+    const coinThumb = document.getElementById("coin-thumb");
+    const coinClose = document.querySelector(".coin-close");
+
+    coinThumb.onclick = () => { coinModal.style.display = "block"; };
+    coinClose.onclick = () => { coinModal.style.display = "none"; };
+
+
     window.onclick = (e) => {
       if (e.target === backpackModal) {
         backpackModal.style.display = "none";
@@ -177,6 +201,9 @@
         if (e.target === boxModal) {
         boxModal.style.display = "none";
       }
+      }
+       if (e.target === coinModal) {
+        coinModal.style.display = "none";
       }
     };
   </script>
