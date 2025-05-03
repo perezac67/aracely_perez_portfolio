@@ -29,7 +29,7 @@
     </div>
 
     <div class="food-gallery">
-      <img src="Assets/BackPack_Pixel.png" alt="Backpack" />
+      <img src="Assets/BackPack_Pixel.png" alt="Backpack" class="clickable" id="backpack-thumb" />
       <img src="Assets/Carrot_Plant_Pixel .png" alt="Carrot Plant" />
       <img src="Assets/Closing_Sign_Pixel.png" alt="Closing Sign" />
       <img src="Assets/Home_Button_Pixel .png" alt="Home Button" />
@@ -45,5 +45,33 @@
       <img src="Assets/Bridge.png" alt="Bridge" />
     </div>
   </main>
+
+  <!-- Backpack Modal -->
+  <div id="backpackModal" class="modal">
+    <div class="modal-content">
+      <span class="close backpack-close">&times;</span>
+      <img src="Assets/BackPack_Pixel.png" alt="Backpack Full View" />
+      <div class="modal-text">
+        <p>
+          This is a backpack UI prop designed for <em>A Warrior’s Recipe</em>. It serves as the player's storage system, where they can keep collected items and ingredients. The design features a sturdy brown backpack with gold accents. I aimed to make it both visually appealing and easily readable within the UI, while still feeling like a natural extension of the game’s world.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const backpackModal = document.getElementById("backpackModal");
+    const backpackThumb = document.getElementById("backpack-thumb");
+    const backpackClose = document.querySelector(".backpack-close");
+
+    backpackThumb.onclick = () => { backpackModal.style.display = "block"; };
+    backpackClose.onclick = () => { backpackModal.style.display = "none"; };
+
+    window.onclick = (e) => {
+      if (e.target === backpackModal) {
+        backpackModal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
